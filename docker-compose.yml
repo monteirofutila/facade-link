@@ -1,0 +1,26 @@
+services:
+  php-nginx-fpm:
+    build:
+      context: .
+      dockerfile: docker/php-nginx-fpm/Dockerfile
+    container_name: php-nginx-fpm
+    ports:
+      - '9000:80'
+
+  php-swoole:
+    build:
+      context: .
+      dockerfile: docker/php-swoole/Dockerfile
+    container_name: php-swoole
+    ports:
+      - '9001:8000'
+
+  php-frankenphp:
+    build:
+      context: .
+      dockerfile: docker/php-frankenphp/Dockerfile
+    container_name: php-frankenphp
+    ports:
+      - '9002:8000'
+      - '443:443' 
+      - '443:443/udp'

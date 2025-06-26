@@ -40,7 +40,5 @@ class AppServiceProvider extends ServiceProvider
             'extra' => $user->email,
             'avatar' => $user->avatar,
         ]);
-
-        Gate::define('viewPulse', fn(User $user): bool => $user->email === 'jonquerfutila@gmail.com');
     }
 }
